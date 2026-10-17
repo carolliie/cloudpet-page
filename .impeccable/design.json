@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T12:35:26-03:00",
+  "title": "Design System: cloudpet",
+  "extensions": {
+    "colorMeta": {
+      "cloudpet-blue": {
+        "role": "primary",
+        "displayName": "Azul cloudpet",
+        "canonical": "#2859c5",
+        "tonalRamp": ["#071531", "#102b63", "#1847ad", "#2859c5", "#527bd4", "#82a0e3", "#bccbf1", "#eef2fd"]
+      },
+      "cloudpet-blue-dark": {
+        "role": "primary",
+        "displayName": "Azul cloudpet profundo",
+        "canonical": "#1847ad",
+        "tonalRamp": ["#06122d", "#0d285f", "#1847ad", "#3c68c0", "#6889d2", "#98ade2", "#c9d4f1", "#f1f4fc"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#242424", "#484848", "#6c6c6c", "#919191", "#b6b6b6", "#dddddd", "#f7f7f7"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#262626", "#4d4d4d", "#737373", "#999999", "#bfbfbf", "#d9d9d9", "#eeeeee", "#ffffff"]
+      },
+      "lilac-snow": {
+        "role": "neutral",
+        "displayName": "Neve lilás",
+        "canonical": "#f4f6ff",
+        "tonalRamp": ["#1d2030", "#3d4153", "#606579", "#858a9e", "#abb0c4", "#ccd1e4", "#e7eaf6", "#f4f6ff"]
+      },
+      "lilac-mist": {
+        "role": "neutral",
+        "displayName": "Névoa lilás",
+        "canonical": "#e7ebfe",
+        "tonalRamp": ["#1b1e2d", "#393d50", "#5a5f74", "#7e8399", "#a3a8be", "#c3c8dc", "#e7ebfe", "#f5f6ff"]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Tinta atenuada",
+        "canonical": "#4a4a4a",
+        "tonalRamp": ["#171717", "#2d2d2d", "#4a4a4a", "#686868", "#898989", "#ababab", "#d0d0d0", "#f2f2f2"]
+      },
+      "focus-gold": {
+        "role": "tertiary",
+        "displayName": "Dourado de foco",
+        "canonical": "#f0c852",
+        "tonalRamp": ["#2d2305", "#5d480b", "#8e701b", "#bd9931", "#f0c852", "#f4d77c", "#f8e6aa", "#fdf7df"]
+      },
+      "vaccine-sky": {
+        "role": "secondary",
+        "displayName": "Céu da carteirinha",
+        "canonical": "#bed7ff",
+        "tonalRamp": ["#13233e", "#29476f", "#466e9f", "#6998ce", "#92bbeb", "#bed7ff", "#dce9ff", "#f4f8ff"]
+      },
+      "vaccine-ink": {
+        "role": "secondary",
+        "displayName": "Tinta da carteirinha",
+        "canonical": "#15346d",
+        "tonalRamp": ["#08152f", "#102750", "#15346d", "#31548a", "#5878a8", "#88a0c5", "#bcc9df", "#edf1f8"]
+      },
+      "vaccine-mark": {
+        "role": "secondary",
+        "displayName": "Marca da carteirinha",
+        "canonical": "#6f92ce",
+        "tonalRamp": ["#10213e", "#23446f", "#3d669a", "#5b83bd", "#6f92ce", "#9ab0d9", "#c6d2e9", "#f0f4fa"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display monumental", "purpose": "Título do hero e maior promessa da marca." },
+      "headline": { "displayName": "Headline de seção", "purpose": "Títulos slab das seções e CTA." },
+      "title": { "displayName": "Título funcional", "purpose": "Títulos de etapas e hierarquia local." },
+      "body": { "displayName": "Corpo", "purpose": "Explicações, benefícios e navegação utilitária." },
+      "label": { "displayName": "Rótulo", "purpose": "Agrupadores em caixa alta e metadados." }
+    },
+    "shadows": [
+      {
+        "name": "mobile-nav-float",
+        "value": "0 14px 34px rgba(40, 89, 197, 0.14)",
+        "purpose": "Eleva somente o painel de navegação móvel aberto acima da página."
+      }
+    ],
+    "motion": [
+      { "name": "state-fast", "value": "180ms ease", "purpose": "Hover de botões e transformação do ícone de menu." },
+      { "name": "nav-underline", "value": "220ms ease", "purpose": "Expansão da linha de navegação a partir da esquerda." },
+      { "name": "hero-title-entry", "value": "780ms cubic-bezier(.16, 1, .3, 1)", "purpose": "Entrada com recorte, blur e deslocamento do título." },
+      { "name": "hero-pets-entry", "value": "900ms 90ms cubic-bezier(.16, 1, .3, 1)", "purpose": "Entrada ascendente da matilha, com escala e blur sutis." }
+    ],
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1120px" },
+      { "name": "touch-navigation", "value": "900px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "narrow-mobile", "value": "380px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Ação contornada para fundo claro, usada no cabeçalho.",
+      "html": "<a class=\"ds-button-outline\" href=\"#\">testar!</a>",
+      "css": ".ds-button-outline { width: max-content; min-height: 62px; display: inline-flex; align-items: center; justify-content: center; padding: 10px 29px 15px; border: 3px solid var(--blue, #2859c5); border-radius: 999px; color: var(--blue, #2859c5); background: transparent; font-family: var(--display, \"Chunk Five\", Rockwell, Georgia, serif); font-size: 30px; line-height: 1; text-decoration: none; transition: transform 180ms ease, background-color 180ms ease, color 180ms ease; } .ds-button-outline:hover { color: #fff; background: var(--blue, #2859c5); transform: translateY(-2px); } .ds-button-outline:focus-visible { outline: 3px solid #f0c852; outline-offset: 4px; }"
+    },
+    {
+      "name": "Light CTA Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Ação principal clara para painéis azuis.",
+      "html": "<a class=\"ds-button-light\" href=\"#\">testar!</a>",
+      "css": ".ds-button-light { width: max-content; min-height: 72px; display: inline-flex; align-items: center; justify-content: center; padding: 13px 36px 18px; border: 0; border-radius: 999px; color: var(--blue, #2859c5); background: var(--snow, #f4f6ff); font-family: var(--display, \"Chunk Five\", Rockwell, Georgia, serif); font-size: 34px; line-height: 1; text-decoration: none; transition: transform 180ms ease; } .ds-button-light:hover { transform: translateY(-2px); } .ds-button-light:focus-visible { outline: 3px solid #f0c852; outline-offset: 4px; } .ds-button-light:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Hero Product Chip",
+      "kind": "chip",
+      "refersTo": "hero-chip",
+      "description": "Rótulo em cápsula que identifica app e dashboard dentro do hero.",
+      "html": "<a class=\"ds-hero-chip\" href=\"#\">APP &amp; Dashboard</a>",
+      "css": ".ds-hero-chip { display: inline-flex; align-items: center; min-height: 46px; padding: 9px 23px 11px; border: 1px solid currentColor; border-radius: 999px; color: var(--snow, #f4f6ff); background: var(--blue, #2859c5); font-family: var(--body, Livvic, Arial, sans-serif); font-size: 19px; font-weight: 600; text-decoration: none; } .ds-hero-chip:hover { background: var(--blue-dark, #1847ad); } .ds-hero-chip:focus-visible { outline: 3px solid #f0c852; outline-offset: 4px; }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "feature-card",
+      "description": "Recipiente claro para uma ilustração de produto, nome do recurso e explicação.",
+      "html": "<article class=\"ds-feature-card\"><div class=\"ds-feature-art\" aria-hidden=\"true\">01</div><h3>Carteirinha</h3><p>A carteira de vacinação digital do seu pet, com doses, datas e próximos reforços.</p></article>",
+      "css": ".ds-feature-card { min-height: 390px; padding: 28px; overflow: hidden; border: 2px solid var(--mist, #e7ebfe); border-radius: 36px; color: #000; background: var(--snow, #f4f6ff); font-family: var(--body, Livvic, Arial, sans-serif); } .ds-feature-art { height: 230px; display: grid; place-items: center; border-radius: 22px; color: #15346d; background: #bed7ff; font-family: var(--display, \"Chunk Five\", Rockwell, Georgia, serif); font-size: 72px; transform: rotate(-2deg); } .ds-feature-card h3 { margin: 13px 0 8px; color: var(--blue, #2859c5); font-family: var(--display, \"Chunk Five\", Rockwell, Georgia, serif); font-size: 26px; font-weight: 400; line-height: 1.3; } .ds-feature-card p { max-width: 340px; margin: 0; font-size: 17px; line-height: 1.55; } .ds-feature-card:focus-within { outline: 3px solid #f0c852; outline-offset: 4px; }"
+    },
+    {
+      "name": "Vaccine Card",
+      "kind": "custom",
+      "description": "Artefato editorial inclinado que representa a carteirinha digital.",
+      "html": "<div class=\"ds-vaccine-card\"><span class=\"ds-pet-kind\">GATO · SRD</span><strong>Pituco Jr.</strong><span class=\"ds-qr-mark\" aria-hidden=\"true\"></span><div class=\"ds-card-facts\"><span>4 vacinas</span><span>4,2 kg</span></div><div class=\"ds-card-code\"><span>001 002 1234 555</span><span>1 ano</span></div></div>",
+      "css": ".ds-vaccine-card { position: relative; width: 345px; max-width: 100%; height: 233px; padding: 25px 25px 22px; border-radius: 22px 22px 18px 18px; color: #15346d; background: #bed7ff; font-family: var(--body, Livvic, Arial, sans-serif); transform: rotate(-2deg); } .ds-vaccine-card::after { content: \"\"; position: absolute; top: -2px; left: 44%; width: 48px; height: 22px; border-radius: 0 0 22px 22px; background: var(--snow, #f4f6ff); } .ds-pet-kind { display: block; font-size: 12px; letter-spacing: .18em; } .ds-vaccine-card strong { display: block; font-family: var(--display, \"Chunk Five\", Rockwell, Georgia, serif); font-size: 25px; line-height: 1.1; } .ds-qr-mark { position: absolute; top: 27px; right: 25px; width: 18px; height: 18px; border: 2px dashed #6f92ce; border-radius: 3px; } .ds-card-facts, .ds-card-code { position: absolute; left: 25px; right: 25px; display: flex; justify-content: space-between; font-size: 12px; } .ds-card-facts { bottom: 48px; } .ds-card-code { bottom: 23px; letter-spacing: .12em; }"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "description": "Navegação principal em caixa alta, com linha animada para ativo, hover e foco.",
+      "html": "<nav class=\"ds-main-nav\" aria-label=\"Principal\"><a class=\"ds-active\" href=\"#\">Home</a><a href=\"#\">Serviços</a><a href=\"#\">Sobre</a></nav>",
+      "css": ".ds-main-nav { display: flex; align-items: center; gap: 48px; color: #000; font-family: var(--body, Livvic, Arial, sans-serif); } .ds-main-nav a { padding: 8px 4px 12px; color: inherit; font-size: 22px; font-weight: 700; text-decoration: none; text-transform: uppercase; } .ds-main-nav a::after { content: \"\"; display: block; height: 3px; margin-top: 8px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 220ms ease; } .ds-main-nav a:hover::after, .ds-main-nav a:focus-visible::after, .ds-main-nav a.ds-active::after { transform: scaleX(1); } .ds-main-nav a:focus-visible { outline: 3px solid #f0c852; outline-offset: 4px; }"
+    },
+    {
+      "name": "Mobile Menu Button",
+      "kind": "button",
+      "description": "Controle circular que transforma duas linhas em um X quando expandido.",
+      "html": "<button class=\"ds-menu-button\" type=\"button\" aria-label=\"Abrir menu\" aria-expanded=\"false\"><span></span><span></span></button>",
+      "css": ".ds-menu-button { display: grid; gap: 7px; width: 46px; height: 46px; place-content: center; border: 2px solid var(--blue, #2859c5); border-radius: 50%; color: var(--blue, #2859c5); background: #fff; } .ds-menu-button span { display: block; width: 20px; height: 2px; background: currentColor; transition: transform 180ms ease; } .ds-menu-button[aria-expanded=\"true\"] span:first-child { transform: translateY(4.5px) rotate(45deg); } .ds-menu-button[aria-expanded=\"true\"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); } .ds-menu-button:hover { background: #f4f6ff; } .ds-menu-button:focus-visible { outline: 3px solid #f0c852; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A História Conectada",
+    "overview": "A identidade transforma prontuário e rotina de cuidado em uma experiência acolhedora, direta e memorável. O campo azul cloudpet funciona como mundo próprio; sobre ele, títulos slab monumentais, a matilha central e pequenos controles em cápsula equilibram expressão e utilidade.\n\nO sistema é amigável sem parecer infantil. Superfícies lilás-neve, cantos amplos e ilustrações de produto dão leveza à informação de saúde, enquanto texto preto e navegação simples mantêm clareza. A composição alterna momentos de grande impacto com blocos calmos e muito espaço, sempre conduzindo tutor e clínica pela mesma história.\n\nEste documento cobre a landing estática construída em index.html, styles.css e script.js. Ele registra sua linguagem visual e seus componentes presentes; não define a interface interna do aplicativo ou do dashboard.",
+    "keyCharacteristics": [
+      "Azul cloudpet como cenário, ação e elo entre as seções.",
+      "Tipografia slab grande e compacta para mensagens de marca.",
+      "Superfícies claras, bordas lilás e cantos generosos.",
+      "Cápsulas leves para ações e metadados, nunca como decoração indiscriminada.",
+      "Fotografia e mockups recortados que entram na composição, sem molduras genéricas de aplicativo."
+    ],
+    "rules": [
+      { "name": "The Blue Field Rule", "body": "Use o azul cloudpet em grandes campos ou ações claras; não o fragmente em muitos acentos pequenos concorrentes.", "section": "colors" },
+      { "name": "The Cold Neutral Rule", "body": "Cards e painéis permanecem na família lilás-neve, preservando contraste suave com o papel branco.", "section": "colors" },
+      { "name": "The Focus Is Signal Rule", "body": "O dourado existe para foco visível e não vira cor promocional.", "section": "colors" },
+      { "name": "The Slab Owns the Message Rule", "body": "Chunk Five é usada em grandes promessas, nomes de recursos e numerais de processo; explicação e navegação permanecem em Livvic.", "section": "typography" },
+      { "name": "The Tight Monument Rule", "body": "Títulos slab grandes usam entrelinha compacta e tracking negativo; nunca ganham entrelinha de texto corrido.", "section": "typography" },
+      { "name": "The One Hero Center Rule", "body": "O primeiro viewport centra título e matilha no mesmo eixo; notas laterais e atalhos podem orbitar esse eixo, mas não competir com ele.", "section": "layout" },
+      { "name": "The Collapse, Don't Squeeze Rule", "body": "Grids de conteúdo colapsam para uma coluna no mobile; cards não são comprimidos em colunas estreitas.", "section": "layout" },
+      { "name": "The Tonal Depth Rule", "body": "Separe superfícies com mudança de azul, branco e lilás antes de recorrer a sombra.", "section": "elevation" },
+      { "name": "The Shadow Has a Job Rule", "body": "Sombra indica uma camada realmente flutuante; não é acabamento padrão de cards.", "section": "elevation" },
+      { "name": "The Scale the Radius Rule", "body": "Quanto maior a superfície, maior o raio; controles pequenos não herdam o mesmo arredondamento visual dos painéis.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do manter o azul cloudpet como grande gesto visual e os neutros frios como áreas de leitura.",
+      "Do reservar Chunk Five para mensagens, títulos de recurso e numerais que precisam de personalidade.",
+      "Do adaptar grids por colapso e reduzir raios e espaçamentos de forma coordenada no mobile.",
+      "Do usar imagens recortadas como parte da composição e preservar seus textos alternativos úteis.",
+      "Do manter foco dourado visível e suporte a prefers-reduced-motion em qualquer novo estado interativo."
+    ],
+    "donts": [
+      "Don't introduzir sombras em cards estáticos; use borda e contraste tonal.",
+      "Don't transformar o hero em um layout genérico de texto à esquerda e mockup à direita.",
+      "Don't misturar uma terceira família tipográfica ou usar Livvic para imitar a voz slab.",
+      "Don't inventar depoimentos, métricas, logos de clientes ou destinos de conversão que a landing não possui.",
+      "Don't extrapolar estes padrões para telas internas do app ou dashboard sem examinar essas superfícies."
+    ]
+  }
+}

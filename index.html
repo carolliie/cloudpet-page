@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Cloudpet reúne vacinas, exames, consultas e documentos do seu pet em um só lugar." />
+    <title>cloudpet — A saúde do seu pet conectada</title>
+    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://db.onlinewebfonts.com/t/121c0534a4638305bbe716625832a5ba.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!--
+      THESIS: A saúde do pet vira uma história conectada; recusamos o hero genérico de app com mockup lateral.
+      OWN-WORLD: Azul cloudpet, superfícies lilás-neve, tipografia slab expressiva, cápsulas finas e cantos amplos.
+      STORY: O tutor entende a centralização, vê os três recursos, aprende o fluxo e encontra o teste.
+      FIRST VIEWPORT: Navegação leve sobre um campo azul; título monumental, matilha central e atalhos na base.
+      FORM: Reprodução fiel do frame Figma 548:34, direção visual fixada pelo usuário; seed key figma-548-34.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->
+    <header class="site-header shell" id="home">
+      <a class="brand" href="#home" aria-label="cloudpet — início">
+        <img src="assets/cloudpet-logo.png" alt="cloudpet" width="228" height="92" />
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Principal">
+        <a class="active" href="#home">Home</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+
+      <a class="button button-outline header-cta" href="#testar">testar!</a>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="hero-title">
+        <h1 id="hero-title">A saúde do seu<br />pet conectada!</h1>
+        <p class="hero-note">Menos papelada.<br />Mais <a href="#servicos">patinhas</a>.</p>
+        <a class="hero-chip" href="#sobre">APP &amp; Dashboard</a>
+        <img class="hero-pets" src="assets/pets-hero.png" alt="Ilustração de vários cães e gatos juntos" width="770" height="486" />
+        <nav class="hero-links" aria-label="Recursos em destaque">
+          <a href="#carteirinha">Carteirinha</a>
+          <a href="#documentos">Documentos</a>
+          <a href="#agendamentos">Agendamentos</a>
+        </nav>
+      </section>
+
+      <section class="features shell section-space" id="servicos" aria-labelledby="features-title">
+        <div class="section-intro reveal">
+          <h2 id="features-title">Tudo do seu pet<br />num lugar só.</h2>
+          <p>Vacinas, exames e consultas organizados na nuvem, sempre à mão quando você precisar.</p>
+        </div>
+
+        <div class="service-details">
+          <article class="service-detail reveal" id="carteirinha">
+            <figure class="service-visual">
+              <img src="assets/carteirinha-digital.png" alt="Carteirinha digital do pet exibida no aplicativo cloudpet" width="333" height="580" />
+            </figure>
+            <div class="service-copy">
+              <span class="service-number" aria-hidden="true">01</span>
+              <h3>Carteirinha digital</h3>
+              <p>Registro de todas as vacinas, com lote, data e veterinário responsável. O cloudpet avisa quando o próximo reforço estiver chegando.</p>
+            </div>
+          </article>
+
+          <article class="service-detail service-detail--reverse reveal" id="documentos">
+            <figure class="service-visual">
+              <img src="assets/documentos-phone.png" alt="Documentos de saúde do pet organizados no aplicativo cloudpet" width="333" height="580" />
+            </figure>
+            <div class="service-copy">
+              <span class="service-number" aria-hidden="true">02</span>
+              <h3>Documentos</h3>
+              <p>Exames, receitas, laudos e atestados guardados na nuvem. Encontre qualquer arquivo em segundos e compartilhe com a clínica.</p>
+            </div>
+          </article>
+
+          <article class="service-detail reveal" id="agendamentos">
+            <figure class="service-visual">
+              <img src="assets/agendamentos-phone.png" alt="Agenda de consultas e cuidados exibida no aplicativo cloudpet" width="333" height="580" />
+            </figure>
+            <div class="service-copy">
+              <span class="service-number" aria-hidden="true">03</span>
+              <h3>Agendamentos</h3>
+              <p>Consultas, banho e tosa e vacinação numa agenda só, com lembretes para você não perder nenhum horário.</p>
+            </div>
+          </article>
+
+          <article class="service-detail service-detail--dashboard reveal">
+            <div class="service-copy">
+              <span class="service-number" aria-hidden="true">04</span>
+              <h3>Dashboard para clínicas</h3>
+              <p>Painel para veterinários registrarem atendimentos, gerenciarem a agenda e enviarem documentos direto para o app do tutor.</p>
+            </div>
+            <figure class="service-visual">
+              <img src="assets/dashboard-clinicas.png" alt="Dashboard cloudpet para clínicas veterinárias exibido em um notebook" width="991" height="518" />
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section class="steps shell reveal" aria-labelledby="steps-title">
+        <h2 id="steps-title">Como funciona</h2>
+        <ol>
+          <li><span>1</span><h3>Cadastre seu pet</h3><p>Nome, espécie, raça e foto. Em poucos minutos o perfil está pronto.</p></li>
+          <li><span>2</span><h3>Junte o histórico</h3><p>Fotografe vacinas e exames antigos ou receba direto da clínica parceira.</p></li>
+          <li><span>3</span><h3>Acompanhe tudo</h3><p>Lembretes, agenda e documentos sempre atualizados, no celular ou no computador.</p></li>
+        </ol>
+      </section>
+
+      <section class="about-section shell section-space" id="sobre" aria-labelledby="about-title">
+        <div class="about-story reveal">
+          <h2 id="about-title">Nossa<br />história</h2>
+          <div class="about-story-copy">
+            <p>O CloudPet surgiu em 2026, como um projeto acadêmico desenvolvido por estudantes da Universidade Federal do Oeste do Pará (UFOPA).</p>
+            <p>A ideia nasceu da necessidade de modernizar o acompanhamento da saúde animal, reduzindo a dependência de registros físicos e facilitando o acesso às informações dos pets.</p>
+          </div>
+        </div>
+
+        <div class="beliefs reveal" aria-labelledby="beliefs-title">
+          <h2 id="beliefs-title">No que a gente acredita</h2>
+          <div class="beliefs-grid">
+            <article class="belief-card">
+              <div class="belief-visual belief-visual--simplicity">
+                <img src="assets/about-simplicidade.png" alt="Cachorrinho curioso aproximando o focinho" width="197" height="197" />
+              </div>
+              <h3>Simplicidade</h3>
+              <p>Cuidar do pet já dá trabalho suficiente. O app tem que ser fácil.</p>
+            </article>
+
+            <article class="belief-card">
+              <div class="belief-visual belief-visual--connection">
+                <img src="assets/about-conexao.png" alt="Cachorro ao lado de um notebook" width="700" height="467" />
+              </div>
+              <h3>Conexão</h3>
+              <p>Tutor e veterinário vendo a mesma informação, na hora certa.</p>
+            </article>
+
+            <article class="belief-card">
+              <div class="belief-visual belief-visual--care">
+                <img src="assets/about-cuidado.png" alt="Gato observando através de uma lupa" width="600" height="486" />
+              </div>
+              <h3>Cuidado</h3>
+              <p>Os dados do seu pet são tratados com o mesmo carinho que ele.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta shell reveal" id="testar" aria-labelledby="cta-title">
+        <div class="cta-copy">
+          <h2 id="cta-title">Bora testar?</h2>
+          <p>Crie a conta do seu pet e veja como fica fácil cuidar da saúde dele.</p>
+          <a class="button button-light" href="#contato" data-test-access>testar!</a>
+          <p class="cta-status" id="cta-status" role="status" aria-live="polite" hidden></p>
+        </div>
+        <img class="dog" src="assets/puppy-cta-v2.png" alt="Filhote de boiadeiro de Berna apoiado na borda" width="1224" height="1008" />
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <div class="footer-brand">
+        <img src="assets/cloudpet-logo.png" alt="cloudpet" width="228" height="92" />
+        <p>Menos papelada. Mais patinhas.</p>
+      </div>
+      <div class="footer-links">
+        <div><strong>Site</strong><a href="#home">Home</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a></div>
+        <div id="contato"><strong>Contato</strong><span>[SEU E-MAIL]</span><span>[@INSTAGRAM]</span></div>
+      </div>
+      <small>© <span id="current-year">2026</span> cloudpet</small>
+    </footer>
+  </body>
+</html>
+
