@@ -208,11 +208,11 @@ button { font: inherit; }
 }
 
 .section-space { padding-block: 140px 40px; }
-.section-intro { display: grid; grid-template-columns: minmax(0, 820px) 380px; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px; }
+.section-intro { display: grid; grid-template-columns: minmax(0, 820px) 380px; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px;}
 .section-intro h2, .steps h2, .about-story h2, .beliefs h2, .cta h2 {
   margin: 0;
   font-size: clamp(58px, 5.85vw, 84px);
-  line-height: .92;
+  line-height: 1.1;
   letter-spacing: -.02em;
 }
 .section-intro p { max-width: 380px; margin: 0; font-size: 22px; line-height: 1.35; }
