@@ -1,8 +1,6 @@
 @font-face {
   font-family: "ChunkFiveEx";
-  src:
-    url("https://db.onlinewebfonts.com/t/121c0534a4638305bbe716625832a5ba.woff2") format("woff2"),
-    url("https://db.onlinewebfonts.com/t/121c0534a4638305bbe716625832a5ba.woff") format("woff");
+  src: url("assets/ChunkFiveEx.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -40,6 +38,21 @@ img { display: block; max-width: 100%; height: auto; }
 h1, h2, h3, p { overflow-wrap: break-word; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--blue-dark);
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus { transform: translateY(0); }
 
 .shell {
   width: min(var(--shell), calc(100% - 80px));
@@ -150,12 +163,13 @@ button { font: inherit; }
 .hero-note {
   position: absolute;
   z-index: 3;
-  top: 311px;
+  top: 60%;
   left: 80px;
   margin: 0;
   font-size: 27px;
   font-weight: 600;
   line-height: 1.15;
+  transform: translateY(-50%);
   animation: hero-support-in 620ms 260ms var(--ease-arrive) both;
 }
 .hero-note a { text-decoration: underline; text-underline-offset: 4px; }
@@ -169,7 +183,7 @@ button { font: inherit; }
   font-size: 19px;
   font-weight: 600;
 }
-.hero-chip { position: absolute; z-index: 3; top: 332px; right: 53px; }
+.hero-chip { position: absolute; z-index: 3; top: 60%; right: 53px; transform: translateY(-50%); }
 .hero-chip { animation: hero-support-in 620ms 340ms var(--ease-arrive) both; }
 .hero-links {
   position: absolute;
@@ -403,8 +417,8 @@ button { font: inherit; }
   .hero { height: 680px; }
   .hero h1 { margin-top: 55px; }
   .hero-pets { bottom: 56px; width: 650px; height: auto; }
-  .hero-note { top: 290px; left: 48px; }
-  .hero-chip { top: 305px; right: 40px; }
+  .hero-note { left: 48px; }
+  .hero-chip { right: 40px; }
   .section-intro { grid-template-columns: minmax(0, 1fr) 320px; }
   .cta { grid-template-columns: 1fr 46%; }
   .cta h2 { font-size: 78px; }
@@ -432,15 +446,34 @@ button { font: inherit; }
     z-index: 20;
     top: 92px;
     right: max(20px, env(safe-area-inset-right));
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
     min-width: 220px;
     padding: 16px;
     border: 2px solid var(--mist);
     border-radius: 16px;
     background: #fff;
     box-shadow: 0 14px 34px rgba(40,89,197,.14);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px) scale(.98);
+    transform-origin: top right;
+    transition:
+      opacity 180ms ease,
+      transform 180ms var(--ease-arrive),
+      visibility 0s linear 180ms;
   }
-  .main-nav.open { display: flex; flex-direction: column; align-items: stretch; gap: 2px; }
+  .main-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition-duration: 240ms, 240ms, 0s;
+    transition-delay: 0s;
+  }
   .main-nav a { min-height: 44px; display: flex; align-items: center; padding: 8px 10px; font-size: 17px; }
   .main-nav a::after { display: none; }
 
@@ -486,19 +519,24 @@ button { font: inherit; }
   .hero-note {
     position: static;
     grid-column: 1;
+    align-self: center;
+    justify-self: start;
     margin: 0;
     font-size: 16px;
     line-height: 1.25;
+    transform: none;
     animation-delay: 180ms;
   }
   .hero-chip {
     position: static;
     grid-column: 2;
+    align-self: center;
     justify-self: end;
     min-height: 40px;
     padding: 7px 13px 9px;
     font-size: 13px;
     white-space: nowrap;
+    transform: none;
     animation-delay: 230ms;
   }
   .hero-pets {
@@ -641,6 +679,7 @@ button { font: inherit; }
 @media (max-width: 380px) {
   .shell { width: calc(100% - 24px); }
   .hero { padding-inline: 16px; }
+  .hero-details { padding-top: 120px; }
   .hero-note { font-size: 15px; }
   .hero-chip { padding-inline: 10px; font-size: 12px; }
   .hero-links { grid-template-columns: 1fr; gap: 0; }
