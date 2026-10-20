@@ -270,7 +270,7 @@ button { font: inherit; }
 .install-steps p { margin-top: 14px; font-size: 17px; }
 .button-blue { color: #fff; background: var(--blue); }
 .button-blue:hover { background: var(--blue-dark); }
-.steps ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin: 52px 0 0; padding: 0; list-style: none; }
+.steps ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 0; list-style: none; }
 .steps li > span { color: var(--blue); font-size: 96px; line-height: .9; }
 .steps h3 { margin: 8px 0 8px; font-size: 28px; line-height: 1.2; }
 .steps p { max-width: 360px; margin: 0; font-size: 19px; line-height: 1.45; }
