@@ -20,14 +20,32 @@ mainNav?.querySelectorAll('a').forEach((link) => {
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
-const testAccess = document.querySelector('[data-test-access]');
-const ctaStatus = document.querySelector('#cta-status');
+const installTabs = document.querySelectorAll('.install-tabs [role="tab"]');
 
-testAccess?.addEventListener('click', (event) => {
-  event.preventDefault();
-  ctaStatus.hidden = false;
-  ctaStatus.textContent = 'O acesso de teste ainda não foi configurado. Adicione o canal de contato no rodapé para receber interessados.';
+const selectPlatform = (platform, focus = false) => {
+  installTabs.forEach((tab) => {
+    const active = tab.dataset.platform === platform;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+    if (active && focus) tab.focus();
+  });
+};
+
+installTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectPlatform(tab.dataset.platform));
+  tab.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+    const next = installTabs[(index + 1) % installTabs.length];
+    selectPlatform(next.dataset.platform, true);
+  });
 });
+
+if (installTabs.length) {
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  selectPlatform(isIOS ? 'ios' : 'android');
+}
 
 const revealItems = document.querySelectorAll('.reveal');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
